@@ -35,6 +35,10 @@ function saludo(idioma) {
   // Si "idioma" es "ingles", devuelve "Hello!"
   // Si "idioma" no es ninguno de los anteiores o es `undefined` devuelve "Hola!"
   // Tu código:
+  let lenguage = idioma=="aleman" ? "Guten Tag!":
+  idioma=="mandarin"? "Ni Hao!":
+  idioma=="ingles"? "Hello!":"Hola!"
+  return lenguage
 }
 
 function colors(color) {
@@ -45,18 +49,27 @@ function colors(color) {
   //En caso que el color recibido sea "orange", devuleve --> "This is orange"
   //Caso default: devuelve --> "Color not found"
   //Usar el statement Switch.
+  let colour= color=="blue"? "This is blue":
+  color=="red"? "This is red":
+  color=="green"? "This is green":
+  color=="orange"? "This is orange":"Color not found"
+  return colour
 }
 
 function esDiezOCinco(numero) {
   // Devuelve "true" si "numero" es 10 o 5
   // De lo contrario, devuelve "false"
   // Tu código:
+  var number = (numero==10||numero==5)? true:false
+  return number
 }
 
 function estaEnRango(numero) {
   // Devuelve "true" si "numero" es menor que 50 y mayor que 20
   // De lo contrario, devuelve "false"
   // Tu código:
+  var number = (numero<50 && numero>20)? true:false
+  return number
 }
 
 function esEntero(numero) {
@@ -67,6 +80,8 @@ function esEntero(numero) {
   // De lo contrario, devuelve "false"
   // Pista: Puedes resolver esto usando `Math.floor`
   // Tu código:
+  var number = Number.isInteger(numero) ? true:false
+  return number
 }
 
 function fizzBuzz(numero) {
@@ -74,6 +89,10 @@ function fizzBuzz(numero) {
   // Si "numero" es divisible entre 5, devuelve "buzz"
   // Si "numero" es divisible entre 3 y 5 (ambos), devuelve "fizzbuzz"
   // De lo contrario, devuelve el numero
+  var number = (numero%3==0 && numero%5==0)? "fizzbuzz":
+  numero%3==0? "fizz":
+  numero%5==0? "buzz":numero
+  return number
 }
 
 function operadoresLogicos(num1, num2, num3) {
@@ -83,6 +102,11 @@ function operadoresLogicos(num1, num2, num3) {
   //Si num3 es más grande que num1 y num2, aumentar su valor en 1 y retornar el nuevo valor.
   //0 no es ni positivo ni negativo. Si alguno de los argumentos es 0, retornar "Error".
   //Si no se cumplen ninguna de las condiciones anteriores, retornar false. 
+  var number = (num1==0|| num2==0 || num3==0)? "Error":
+  (num1<0|| num2<0 || num3<0)? "Hay negativos":
+  (num1>num2 && num1>num3 && num1>0)? "Número 1 es mayor y positivo":
+  (num3>num2 && num3>num1)? (num3+1):false
+  return number
 }
 
 function esPrimo(numero) {
@@ -101,7 +125,8 @@ function esVerdadero(valor){
   //Escribe una función que reciba un valor booleano y retorne “Soy verdadero” 
   //si su valor es true y “Soy falso” si su valor es false.
   //Escribe tu código aquí
-  valor ? "Soy verdadero":"Soy falso";
+  let x= valor? true:false
+  return x
 
 }
 
