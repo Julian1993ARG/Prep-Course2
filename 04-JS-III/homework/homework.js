@@ -102,13 +102,16 @@ function numeroMasGrande(numeros) {
 
 function multiplicarArgumentos() {
   // Usa la palabra clave `arguments` para multiplicar todos los argumentos y devolver el producto
-  // Si no se pasan argumentos devuelve 0. Si se pasa un argumento, simplemente devuélvelo
+// Si no se pasan argumentos devuelve 0. Si se pasa un argumento, simplemente devuélvelo
   // Escribe tu código aquí:
-  var total=1;
-  for(var i=0;arguments.length;i++){
-    total*=arguments
-  }
-  return total
+  
+ if(arguments.length>0){
+  var total=arguments[0];
+   for(var i=1;i<arguments.length;i++){
+     total *= arguments[i]
+   }
+ }else total=0
+return total
 }
 
 
@@ -121,7 +124,7 @@ function cuentoElementos(arreglo){
     valores.push(item)
     }
   })
-  return valores
+  return valores.length
 }
 
 
@@ -130,7 +133,8 @@ function diaDeLaSemana(numeroDeDia) {
   //Realiza una función que dado el número del día de la semana, retorne: Es fin de semana
   //si el día corresponde a Sábado o Domingo y “Es dia Laboral” en caso contrario. 
   //Escribe tu código aquí   
-  
+  var dia = (numeroDeDia==1 || numeroDeDia ==7)? "Es fin de semana":"Es dia Laboral"
+  return dia
 } 
 
 
@@ -138,7 +142,9 @@ function empiezaConNueve(n) {
   //Desarrolle una función que recibe como parámetro un número entero n. Debe retornar true si el entero 
   //inicia con 9 y false en otro caso.
   //Escribe tu código aquí
-  
+  var text =n.toString()
+  if(text[0]==="9"){return true
+  }else {return false}
 }
 
 
