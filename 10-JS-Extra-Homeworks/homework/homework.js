@@ -10,6 +10,11 @@ function deObjetoAmatriz(objeto){
       C: 3
     }) ➞ [["D", 1], ["B", 2], ["C", 3]]*/
   //Escribe tu código aquí
+  let array=[];
+  for (const key in objeto) {
+    array.push([key, objeto[key]])
+  }
+  return array
 }
 
 
@@ -18,6 +23,15 @@ function numberOfCharacters(string) {
   //en formato par clave-valor.
   //Ej: Recibe ---> "adsjfdsfsfjsdjfhacabcsbajda" || Devuelve ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 } 
   //Escribe tu código aquí
+  let object={}
+  for(let i =0;i<string.length;i++){
+    if(object.hasOwnProperty(string[i])){
+      object[string[i]]+=1
+    }else{
+      object[string[i]]=1
+    }
+  }
+  return object
 }
 
 
@@ -26,6 +40,16 @@ function capToFront(s) {
   //al principio de la palabra.
   //Ejemplo: soyHENRY -> HENRYsoy
   //Escribe tu código aquí
+  let minuscula="";
+  let mayuscula="";
+  for(let i =0;i<s.length;i++){
+    if(s[i].toUpperCase()==s[i]){
+      mayuscula +=s[i]
+    }else{
+      minuscula +=s[i]
+    }
+  }
+  return mayuscula + minuscula
 }
 
 
@@ -35,6 +59,12 @@ function asAmirror(str) {
   //pero con cada una de sus palabras invertidas, como si fuera un espejo.
   //Ej: Recibe ---> "The Henry Challenge is close!" || Devuelve ---> "ehT yrneH egnellahC si !esolc"
   //Escribe tu código aquí
+  let array=str.split(" ");
+  let array2=[]
+  for(let i=0;i<array.length;i++){
+    array2.push(array[i].split("").reverse().join("")) 
+  }
+  return array2.join(" ")
 } 
 
 
@@ -43,6 +73,12 @@ function capicua(numero){
   //La misma debe retornar: "Es capicua" si el número se número que se lee igual de 
   //izquierda a derecha que de derecha a izquierda. Caso contrario retorna "No es capicua"
   //Escribe tu código aquí
+  let invertir= numero.toString().split("").reverse().join("")
+  if(numero=== Number(invertir)){
+    return "Es capicua"
+  }else {
+   return "No es capicua"
+  }
 }
 
 
@@ -50,6 +86,13 @@ function deleteAbc(cadena){
   //Define una función que elimine las letras "a", "b" y "c" de la cadena dada 
   //y devuelva la versión modificada o la misma cadena, en caso de contener dichas letras.
   //Escribe tu código aquí
+  let string="";
+  for(let i =0;i<cadena.length;i++){
+    if(cadena[i]!="a"&&cadena[i]!="b"&&cadena[i]!="c"){
+      string +=cadena[i]
+    }
+  }
+  return string
 }
 
 
